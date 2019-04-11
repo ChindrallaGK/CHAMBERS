@@ -1,0 +1,138 @@
+<html>
+<body style="background-color:pink";>
+<form>
+<FIELDSET>
+<table align="center">
+<tr>
+<td>
+FIRST NAME:<td>
+	<input type="text" name="First name" required><br</td></tr>
+<tr>
+<td>
+LAST NAME:<td>
+	<input type="text" name="Last name"></td></tr>
+<tr>
+<td>
+EMAIL-ID:<td>
+	<input type="email" name="email"></td></tr>
+<tr>
+<td>
+PASSWORD:<td>
+	<input type="password" name="Password"></td></tr>
+<tr>
+<td>
+GENDER:<td>
+	<input type="radio" name="male" Value="Male">Male
+	<input type="radio" name="female" value="female">Female</td></tr>
+<tr>
+<td>
+PERMANENT ADDRESS:</td></tr>
+<tr><td>
+	Dr.no & strt.name<td>
+	<input type="text" id="door1"  onkeyup="enable1()"></td></tr>
+<tr>
+<td>
+	Area name:<td>
+	<input type="text" id="area1"  onkeyup="enable2()" disabled></td></tr>
+<tr>
+<td>
+	Pin code:<td>
+	<input type="text" id="pin1"  disabled></td></tr><tr><td></tr></td><tr><td></tr></td>
+<tr>
+<td>
+&nbsp&nbsp&nbsp&nbsp<input type="checkbox" id="v1" name="box1" value="box1" onclick="same()">Same has previous address</td></tr><tr><td></tr></td><tr><td></tr></td>
+<tr>
+<td>
+COMMUNICATION ADDRESS:</td></tr><tr>
+<td>
+	Dr.no & strt.name<td>
+	<input type="text" id="door2" onclick="enable3()"></td></tr>
+<tr>
+<td>
+	Area name:<td>
+	<input type="text" id="area2" disabled onclick="enable4()"></td></tr>
+<tr>
+<td>
+	Pin code:<td>
+	<input type="text" id="pin2" disabled ></td></tr>
+	<tr><td></tr></td>
+	<tr><td></tr></td>
+<tr>
+<td>
+&nbsp&nbsp&nbsp&nbsp<input type='file' >
+</td></tr><tr><td></tr></td><tr><td></tr></td>
+<tr>
+<td>
+	
+<input type="checkbox" id="v2" name="box" value="box" onclick="funct()">I agree upon the terms and conditions</td></tr><tr><td></tr></td><tr><td></tr></td>
+<tr>
+<td>
+<input type="button" id="b1" value="submit" disabled>
+</font>	
+</form>
+<script>
+	function enable1()
+	{	
+			document.getElementById("area1").disabled=false;
+	}
+	function enable2()
+	{
+	
+			document.getElementById("pin1").disabled=false;
+	}
+	function enable3()
+	{	
+			document.getElementById("area2").disabled=false;
+	}
+	function enable4()
+	{
+	
+			document.getElementById("pin2").disabled=false;
+	}
+	
+	function funct()
+	{
+		var box=document.getElementsByName("box");
+		if(box[0].checked)
+		{
+			document.getElementById("b1").disabled=false;
+		}
+		else
+		{
+			document.getElementById("b1").disabled=true;
+		}
+		
+	}
+	function same()  
+	{
+	var box1=document.getElementsByName("box1");
+	if(box1[0].checked)
+	{
+		document.getElementById("door2").value = document.getElementById("door1").value;
+		document.getElementById("door2").disabled=true;
+		
+		document.getElementById("area2").value = document.getElementById("area1").value;
+		document.getElementById("area2").disabled=true;
+		
+		document.getElementById("pin2").value = document.getElementById("pin1").value;
+		document.getElementById("pin2").disabled=true;
+	}
+	else
+	{
+		document.getElementById("door2").value="";
+		document.getElementById("door2").disabled=false;
+		
+		document.getElementById("area2").value="";
+		document.getElementById("area2").disabled=true;
+		
+		document.getElementById("pin2").value="";
+		document.getElementById("pin2").disabled=true;
+	}
+	}
+	
+  
+	
+</script>	
+</body>
+	
+</html>
